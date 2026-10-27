@@ -8,13 +8,22 @@
   "linkedin": "https://www.linkedin.com/in/yentl-collin-aa64792b2/",
   "portrait": "",
   "intro": [
-    "I am an AI Scientist Intern at the Institute of Foundation Models (MBZUAI), working with the Speech / LLM team on generative foundation models. I study mathematics and machine learning in the MVA master’s program at ENS Paris-Saclay and in the engineering program at École des Ponts et Chaussées.",
-    "My research interests include flow matching and diffusion models, efficient generation for speech and language, and state-space models. Previously, I was a visiting student researcher in Chirag J. Patel’s lab at Harvard University, working on interpretable time-series forecasting for healthcare."
+    "I work on generative models at the Institute of Foundation Models (MBZUAI), with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language.",
+    "I am a student in the MVA master’s program at ENS Paris-Saclay and at École des Ponts et Chaussées. Previously, I worked on interpretable time-series models in Chirag J. Patel’s lab at Harvard University."
   ],
   "interests": [
-    {"title": "Generative modeling", "text": "Flow matching, flow-map distillation, and discrete diffusion for speech, language, and images."},
-    {"title": "Efficient foundation models", "text": "Few-step inference, inference-time scaling, and distillation from Transformers to state-space models."},
-    {"title": "Time series & healthcare", "text": "Interpretable state-space models, forecasting, and personalized glucose management."}
+    {
+      "title": "Generative modeling",
+      "text": "Flow matching, flow-map distillation, and discrete diffusion for speech, language, and images."
+    },
+    {
+      "title": "Efficient foundation models",
+      "text": "Few-step inference, inference-time scaling, and distillation from Transformers to state-space models."
+    },
+    {
+      "title": "Time series & healthcare",
+      "text": "Interpretable state-space models, forecasting, and personalized glucose management."
+    }
   ],
   "publications": [
     {
@@ -24,7 +33,9 @@
       "description": "Flow-map distillation of large-scale flow-matching text-to-speech models for few-step inference.",
       "paper": "https://arxiv.org/abs/2609.36324",
       "code": "",
-      "context": "IFM · MBZUAI"
+      "context": "IFM · MBZUAI",
+      "image": "assets/research/flow-distillation.svg",
+      "authors": "Yentl Collin, Evan Dufraisse, Amr Mohamed, Amine Khelif Khelif, Dani Bouch, Guokan Shang"
     },
     {
       "year": "2025",
@@ -33,7 +44,9 @@
       "description": "Interpretable state-space modeling for continuous glucose forecasting and personalized diabetes management.",
       "paper": "https://arxiv.org/abs/2510.04386",
       "code": "https://github.com/YentlCollin/SSM-CGM",
-      "context": "Harvard University"
+      "context": "Harvard University",
+      "image": "assets/research/ssm-cgm.png",
+      "authors": "Shakson Isaac*, Yentl Collin*, Chirag J. Patel"
     }
   ],
   "outside": "Outside research, I enjoy playing the cello, which I studied for fourteen years at the Conservatoire de Toulouse, as well as football and swimming."

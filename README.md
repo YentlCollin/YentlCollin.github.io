@@ -8,7 +8,7 @@ Présentation, intérêts de recherche, publications, notes et contacts.
 - `content.json` : présentation, liens de contact, intérêts et publications.
 - `assets/style.css` : apparence et mise en page.
 - `assets/Yentl-Collin-CV.pdf` : remplacer pour mettre à jour le CV.
-- Photo : placer le portrait dans `assets/portrait.jpg`, puis mettre `"portrait": "assets/portrait.jpg"` dans `content.json`. Les initiales disparaîtront automatiquement. Le cadrage est au format 4:5.
+- Photo : placer le portrait dans `assets/portrait.jpg`, puis mettre `"portrait": "assets/portrait.jpg"` dans `content.json`. Le schéma de la page d’accueil sera automatiquement remplacé par la photo. Le cadrage est au format 4:5.
 
 ## Publier une note
 
@@ -30,3 +30,9 @@ python3 -m venv .venv
 Ouvrir http://localhost:8000. Relancer la construction après une modification.
 
 Les sources sont à la racine ; le dossier `dist/` est généré et n’est pas suivi par Git. Le CV de référence dans `Aide_au_site/` n’est pas suivi non plus ; seule la copie destinée au site est publiée.
+
+## Visuels et typographie
+
+- `assets/research/ssm-cgm.png` : figure d’architecture extraite de l’article SSM-CGM, arXiv:2510.04386.
+- Les deux fichiers SVG de recherche sont des schémas conceptuels créés pour le site, pas des graphiques de résultats expérimentaux.
+- Polices DM Sans et Newsreader, hébergées localement. Licences SIL Open Font License conservées dans `assets/fonts/`.
