@@ -6,10 +6,10 @@
   "phone": "+33 7 83 48 05 83",
   "github": "https://github.com/YentlCollin",
   "linkedin": "https://www.linkedin.com/in/yentl-collin-aa64792b2/",
-  "portrait": "",
+  "portrait": "assets/portrait.png",
   "intro": [
-    "I work on generative models at the Institute of Foundation Models (MBZUAI), with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language.",
-    "I am a student in the MVA master’s program at ENS Paris-Saclay and at École des Ponts et Chaussées. Previously, I worked on interpretable time-series models in Chirag J. Patel’s lab at Harvard University."
+    "I work on generative models at the Institute of Foundation Models (IFM) at MBZUAI, with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language.",
+    "I hold a master’s degree in Mathematics, Vision and Learning (MVA) from ENS Paris-Saclay and an engineering degree from École des Ponts et Chaussées (ENPC). Previously, I worked on recurrent models and state-space models (SSMs) for interpretable time-series learning in Chirag J. Patel’s lab at Harvard University."
   ],
   "interests": [
     {
@@ -48,6 +48,5 @@
       "image": "assets/research/ssm-cgm.png",
       "authors": "Shakson Isaac*, Yentl Collin*, Chirag J. Patel"
     }
-  ],
-  "outside": "Outside research, I enjoy playing the cello, which I studied for fourteen years at the Conservatoire de Toulouse, as well as football and swimming."
+  ]
 }

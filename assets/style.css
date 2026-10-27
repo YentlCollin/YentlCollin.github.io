@@ -74,7 +74,7 @@ h2 { font-family: var(--serif); font-size: 33px; letter-spacing: -.7px; line-hei
 .paper-description { font-size: 12px; line-height: 1.8; color: var(--muted); margin: 0; }
 .paper .links { margin-top: 13px; gap: 17px; }
 .paper .links a { font-size: 11px; border-bottom: 1px solid #cdd4c5; line-height: 1.8; }
-.lower-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; padding-top: 37px; border-top: 1px solid var(--line); margin-top: 28px; }
+.lower-grid { display: grid; grid-template-columns: 1fr; gap: 64px; padding-top: 37px; border-top: 1px solid var(--line); margin-top: 28px; }
 .lower-grid h2 { font-size: 29px; margin-bottom: 19px; }
 .lower-grid p { font-size: 13px; color: var(--muted); }
 .lower-grid .small-link { font-size: 11px; text-decoration: none; }
@@ -90,7 +90,7 @@ footer .footer-links { display: flex; gap: 20px; }
 .page-intro { padding-top: 65px; margin-bottom: 45px; }
 .page-intro h1 { font-size: 56px; letter-spacing: -1.8px; margin-bottom: 20px; }
 .page-intro p:not(.kicker) { max-width: 600px; color: var(--muted); font-size: 14px; }
-.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.contact-layout { max-width: 760px; }
 .contact-grid { margin: 0; }
 .contact-item { padding: 22px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 90px 1fr; gap: 15px; }
 .contact-item dt { font-size: 11px; color: var(--muted); }
