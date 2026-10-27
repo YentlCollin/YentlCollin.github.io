@@ -1,0 +1,32 @@
+# Yentl Collin — Personal website
+
+Site académique statique, hébergé sur https://yentlcollin.github.io.
+Présentation, intérêts de recherche, publications, notes et contacts.
+
+## Modifier le contenu
+
+- `content.json` : présentation, liens de contact, intérêts et publications.
+- `assets/style.css` : apparence et mise en page.
+- `assets/Yentl-Collin-CV.pdf` : remplacer pour mettre à jour le CV.
+- Photo : placer le portrait dans `assets/portrait.jpg`, puis mettre `"portrait": "assets/portrait.jpg"` dans `content.json`. Les initiales disparaîtront automatiquement. Le cadrage est au format 4:5.
+
+## Publier une note
+
+Copier `notes/example.md` vers `notes/mon-sujet.md` (minuscules et tirets), puis modifier le titre, la date (AAAA-MM-JJ) et le résumé. Passer `draft: true` à `draft: false`. Écrire le texte en Markdown sous la deuxième ligne `---`.
+
+Les notes sont classées de la plus récente à la plus ancienne. La dernière apparaît aussi sur la page d’accueil. Les brouillons restent dans le dépôt public : ne pas y mettre d’informations confidentielles.
+
+Chaque modification poussée sur `main` déclenche la reconstruction et la publication avec GitHub Actions. Aucun abonnement ni service de base de données n’est nécessaire.
+
+## Aperçu local
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/build.py
+.venv/bin/python -m http.server 8000 --directory dist
+```
+
+Ouvrir http://localhost:8000. Relancer la construction après une modification.
+
+Les sources sont à la racine ; le dossier `dist/` est généré et n’est pas suivi par Git. Le CV de référence dans `Aide_au_site/` n’est pas suivi non plus ; seule la copie destinée au site est publiée.

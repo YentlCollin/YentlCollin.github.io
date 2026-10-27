@@ -1,0 +1,40 @@
+{
+  "name": "Yentl Collin",
+  "site_url": "https://yentlcollin.github.io",
+  "role": "AI Scientist Intern · IFM / MBZUAI",
+  "email": "yentl.collin@eleves.enpc.fr",
+  "phone": "+33 7 83 48 05 83",
+  "github": "https://github.com/YentlCollin",
+  "linkedin": "https://www.linkedin.com/in/yentl-collin-aa64792b2/",
+  "portrait": "",
+  "intro": [
+    "I am an AI Scientist Intern at the Institute of Foundation Models (MBZUAI), working with the Speech / LLM team on generative foundation models. I study mathematics and machine learning in the MVA master’s program at ENS Paris-Saclay and in the engineering program at École des Ponts et Chaussées.",
+    "My research interests include flow matching and diffusion models, efficient generation for speech and language, and state-space models. Previously, I was a visiting student researcher in Chirag J. Patel’s lab at Harvard University, working on interpretable time-series forecasting for healthcare."
+  ],
+  "interests": [
+    {"title": "Generative modeling", "text": "Flow matching, flow-map distillation, and discrete diffusion for speech, language, and images."},
+    {"title": "Efficient foundation models", "text": "Few-step inference, inference-time scaling, and distillation from Transformers to state-space models."},
+    {"title": "Time series & healthcare", "text": "Interpretable state-space models, forecasting, and personalized glucose management."}
+  ],
+  "publications": [
+    {
+      "year": "2026",
+      "title": "Distill Locally, Schedule Globally: Flow Maps for Few-Step Text-to-Speech",
+      "venue": "Submitted to ICASSP 2027",
+      "description": "Flow-map distillation of large-scale flow-matching text-to-speech models for few-step inference.",
+      "paper": "https://arxiv.org/abs/2609.36324",
+      "code": "",
+      "context": "IFM · MBZUAI"
+    },
+    {
+      "year": "2025",
+      "title": "SSM-CGM: Interpretable State-Space Forecasting Model of Continuous Glucose Monitoring for Personalized Diabetes Management",
+      "venue": "NeurIPS 2025 · TS4H Workshop · Accepted",
+      "description": "Interpretable state-space modeling for continuous glucose forecasting and personalized diabetes management.",
+      "paper": "https://arxiv.org/abs/2510.04386",
+      "code": "https://github.com/YentlCollin/SSM-CGM",
+      "context": "Harvard University"
+    }
+  ],
+  "outside": "Outside research, I enjoy playing the cello, which I studied for fourteen years at the Conservatoire de Toulouse, as well as football and swimming."
+}
