@@ -8,8 +8,8 @@
   "linkedin": "https://www.linkedin.com/in/yentl-collin-aa64792b2/",
   "portrait": "assets/portrait.png",
   "intro": [
-    "I work on generative models at the Institute of Foundation Models (IFM) at MBZUAI, with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language.",
-    "I hold a master’s degree in Mathematics, Vision and Learning (MVA) from ENS Paris-Saclay and an engineering degree from École des Ponts et Chaussées (ENPC). I am also interested in recurrent and subquadratic architectures, from SSMs and xLSTMs to linear attention and hybrid models, and in transferring Transformer capabilities to them, building on my work applying SSMs to interpretable time-series learning in Chirag J. Patel’s lab at Harvard University."
+    "I work on generative models at the Institute of Foundation Models (IFM) at MBZUAI, with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language. I am also interested in recurrent and subquadratic sequence models, including SSMs, xLSTMs, linear attention, and hybrid architectures.",
+    "I hold a master’s degree in Mathematics, Vision and Learning (MVA) from ENS Paris-Saclay and an engineering degree from École des Ponts et Chaussées (ENPC). Previously, I worked on recurrent models and state-space models (SSMs) for interpretable time-series learning in Chirag J. Patel’s lab at Harvard University."
   ],
   "interests": [
     {
