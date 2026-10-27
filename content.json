@@ -9,7 +9,7 @@
   "portrait": "assets/portrait.png",
   "intro": [
     "I work on generative models at the Institute of Foundation Models (IFM) at MBZUAI, with the Speech / LLM team. My interests lie in flow matching, discrete diffusion, and efficient generation for speech and language.",
-    "I hold a master’s degree in Mathematics, Vision and Learning (MVA) from ENS Paris-Saclay and an engineering degree from École des Ponts et Chaussées (ENPC). Previously, I worked on recurrent models and state-space models (SSMs) for interpretable time-series learning in Chirag J. Patel’s lab at Harvard University."
+    "I hold a master’s degree in Mathematics, Vision and Learning (MVA) from ENS Paris-Saclay and an engineering degree from École des Ponts et Chaussées (ENPC). I am also interested in recurrent and subquadratic architectures, from SSMs and xLSTMs to linear attention and hybrid models, and in transferring Transformer capabilities to them, building on my work applying SSMs to interpretable time-series learning in Chirag J. Patel’s lab at Harvard University."
   ],
   "interests": [
     {
@@ -21,8 +21,8 @@
       "text": "Few-step inference, inference-time scaling, and distillation from Transformers to state-space models."
     },
     {
-      "title": "Time series & healthcare",
-      "text": "Interpretable state-space models, forecasting, and personalized glucose management."
+      "title": "Time series & tabular",
+      "text": "Interpretable learning for time-series and tabular data, state-space models, and forecasting."
     }
   ],
   "publications": [
