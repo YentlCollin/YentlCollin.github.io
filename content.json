@@ -48,5 +48,28 @@
       "image": "assets/research/ssm-cgm.png",
       "authors": "Shakson Isaac*, Yentl Collin*, Chirag J. Patel"
     }
+  ],
+  "news": [
+    {
+      "date": "2026-10",
+      "title": "Jais-ASR",
+      "category": "Contribution",
+      "description": "I contributed to our open speech recognition model for Arabic and its dialects.",
+      "url": "https://ifm.ai/blog/jais-asr/"
+    },
+    {
+      "date": "2026-10",
+      "title": "Jais 3",
+      "category": "Team release",
+      "description": "IFM released its Arabic-centric family of language and agentic models, built on K2 Horizon.",
+      "url": "https://ifm.ai/blog/jais3/"
+    },
+    {
+      "date": "2026-09",
+      "title": "K2 Horizon",
+      "category": "Team release",
+      "description": "IFM released an open family of foundation models, alongside training code, checkpoints, and recipes.",
+      "url": "https://ifm.ai/blog/k2/"
+    }
   ]
 }

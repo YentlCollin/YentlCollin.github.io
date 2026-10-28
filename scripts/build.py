@@ -5,6 +5,7 @@ import shutil
 import re
 import html
 from datetime import date
+from calendar import month_abbr
 import markdown
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,7 +26,7 @@ def page(title, body, filename, active='Home', description=None):
     description = description or 'Yentl Collin — research in generative modeling, efficient foundation models, and interpretable time-series learning.'
     nav = ''.join(f'<a href="{url}"'+(' aria-current="page"' if active == label else '')+f'>{label}</a>' for label, url in [('Home','index.html'),('Publications','publications.html'),('Notes & writing','notes.html'),('Contact','contact.html')])
     doc = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — Yentl Collin</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#faf9f5"><link rel="canonical" href="{e(C['site_url'])}/{filename}"><meta property="og:title" content="{e(title)} — Yentl Collin"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><link rel="preload" href="assets/fonts/font-4.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="assets/style.css?v=3"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — Yentl Collin</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#faf9f5"><link rel="canonical" href="{e(C['site_url'])}/{filename}"><meta property="og:title" content="{e(title)} — Yentl Collin"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><link rel="preload" href="assets/fonts/font-4.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="assets/style.css?v=4"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html">Yentl Collin<span style="color:#7f946e">.</span></a><div class="navlinks">{nav}<a class="cv" href="assets/Yentl-Collin-CV.pdf">CV ↗</a></div></nav></header><main id="main">{body}</main><footer><span>© {date.today().year} Yentl Collin</span><div class="footer-links"><a href="{e(C['github'])}">GitHub</a><a href="{e(C['linkedin'])}">LinkedIn</a><a href="mailto:{e(C['email'])}">Email</a></div></footer></body></html>'''
     (OUT / filename).write_text(doc)
 
@@ -38,6 +39,23 @@ def papers():
         image_class = ' ssm' if p.get('image','').endswith('ssm-cgm.png') else ''
         result += f'''<article class="paper"><a class="paper-figure{image_class}" href="{e(p['paper'])}" tabindex="-1" aria-hidden="true"><img src="{e(p['image'])}" alt="" width="640" height="400" loading="lazy"></a><div><div class="paper-meta"><span>{e(p['year'])}</span><span aria-hidden="true">/</span><span class="venue">{e(p['venue'])}</span></div><h3><a href="{e(p['paper'])}">{e(p['title'])}</a></h3><p class="authors">{authors}</p><p class="paper-description">{e(p['description'])}</p><div class="links"><a href="{e(p['paper'])}">Paper <span aria-hidden="true">↗</span></a>{code}</div></div></article>'''
     return result
+
+
+def news_section():
+    items = sorted(C.get('news', []), key=lambda n: n['date'], reverse=True)
+    if not items:
+        return ''
+    rows = []
+    for item in items:
+        raw_date = item['date']
+        if not re.fullmatch(r'\d{4}-\d{2}(?:-\d{2})?', raw_date):
+            raise ValueError('News dates must use YYYY-MM or YYYY-MM-DD')
+        parsed_date = date.fromisoformat(raw_date + '-01' if len(raw_date) == 7 else raw_date)
+        label = f'{month_abbr[parsed_date.month]} {parsed_date.year}'
+        category = item.get('category', '')
+        category_class = ' contribution' if category == 'Contribution' else ''
+        rows.append(f'''<li class="news-item"><time datetime="{e(raw_date)}">{label}</time><div class="news-copy"><div class="news-heading"><h3><a href="{e(item['url'])}">{e(item['title'])} <span aria-hidden="true">↗</span></a></h3><span class="news-category{category_class}">{e(category)}</span></div><p>{e(item['description'])}</p></div></li>''')
+    return '<section class="news-section" id="news" aria-labelledby="news-title"><div class="section-head"><h2 id="news-title">News &amp; releases</h2></div><ul class="news-list">' + ''.join(rows) + '</ul></section>'
 
 
 notes = []
@@ -76,6 +94,7 @@ else:
     note_teaser = '<div class="empty-note"><p>A notebook for ideas worth keeping.</p><p class="subtle">Research notes, readings, and occasional detours.<br>First entries coming soon.</p></div>'
 page('Home', f'''<div class="hero"><div class="hero-copy"><p class="kicker">Machine learning research</p><h1>{e(C['name'])}</h1><p class="role">{e(C['role'])}</p><div class="intro">{''.join('<p>'+e(p)+'</p>' for p in C['intro'])}</div>{links()}</div>{hero_image}</div>
 <div class="research-line"><h2>Research interests</h2><div class="topics">{research}</div></div>
+{news_section()}
 <section class="publications-section" aria-labelledby="papers-title"><div class="section-head"><h2 id="papers-title">Selected publications</h2><a href="publications.html">All publications <span aria-hidden="true">↗</span></a></div>{papers()}</section>
 <div class="lower-grid"><section><h2>Notes & writing</h2>{note_teaser}</section></div>
 <div class="contact-strip"><p>Always happy to talk research.</p><a href="mailto:{e(C['email'])}">{e(C['email'])} &nbsp; ↗</a></div>''', 'index.html')

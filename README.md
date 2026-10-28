@@ -5,10 +5,26 @@ Présentation, intérêts de recherche, publications, notes et contacts.
 
 ## Modifier le contenu
 
-- `content.json` : présentation, liens de contact, intérêts et publications.
+- `content.json` : présentation, liens de contact, intérêts, publications et actualités.
 - `assets/style.css` : apparence et mise en page.
 - `assets/Yentl-Collin-CV.pdf` : remplacer pour mettre à jour le CV.
 - Photo : placer le portrait dans `assets/portrait.jpg`, puis mettre `"portrait": "assets/portrait.jpg"` dans `content.json`. Le schéma de la page d’accueil sera automatiquement remplacé par la photo. Le cadrage est au format 4:5.
+
+## Ajouter une actualité ou une sortie
+
+Ajouter une entrée à la liste `news` de `content.json` :
+
+```json
+{
+  "date": "2026-10",
+  "title": "Titre de l’annonce",
+  "category": "Team release",
+  "description": "Une phrase présentant la nouvelle.",
+  "url": "https://example.com/annonce"
+}
+```
+
+La date accepte `AAAA-MM` ou `AAAA-MM-JJ`. Les entrées sont classées de la plus récente à la plus ancienne ; à date égale, l’ordre du fichier est conservé. Utiliser `Contribution` pour une sortie à laquelle tu as participé, `Team release` pour une annonce de ton équipe, ou par exemple `Reading` pour une lecture intéressante. Préciser ta contribution dans la description lorsque c’est pertinent. Les liens pointent vers l’annonce ou la ressource d’origine. La rubrique apparaît sur la page d’accueil, avant les publications.
 
 ## Publier une note
 
