@@ -37,7 +37,7 @@ def papers():
         code = f'<a href="{e(p["code"])}">Code <span aria-hidden="true">↗</span></a>' if p.get('code') else ''
         authors = e(p.get('authors', '')).replace('Yentl Collin', '<strong>Yentl Collin</strong>')
         image_class = ' ssm' if p.get('image','').endswith('ssm-cgm.png') else ''
-        result += f'''<article class="paper"><a class="paper-figure{image_class}" href="{e(p['paper'])}" tabindex="-1" aria-hidden="true"><img src="{e(p['image'])}" alt="" width="640" height="400" loading="lazy"></a><div><div class="paper-meta"><span>{e(p['year'])}</span><span aria-hidden="true">/</span><span class="venue">{e(p['venue'])}</span></div><h3><a href="{e(p['paper'])}">{e(p['title'])}</a></h3><p class="authors">{authors}</p><p class="paper-description">{e(p['description'])}</p><div class="links"><a href="{e(p['paper'])}">Paper <span aria-hidden="true">↗</span></a>{code}</div></div></article>'''
+        result += f'''<article class="paper"><a class="paper-figure{image_class}" href="{e(p['paper'])}" tabindex="-1" aria-hidden="true"><img src="{e(p['image'])}" alt="" width="640" height="400" loading="lazy"></a><div><div class="paper-meta"><span>{e(p['year'])}</span><span aria-hidden="true">/</span><span class="venue">{e(p['venue'])}</span><span aria-hidden="true">·</span><span class="affiliation">{e(p['context'])}</span></div><h3><a href="{e(p['paper'])}">{e(p['title'])}</a></h3><p class="authors">{authors}</p><p class="paper-description">{e(p['description'])}</p><div class="links"><a href="{e(p['paper'])}">Paper <span aria-hidden="true">↗</span></a>{code}</div></div></article>'''
     return result
 
 
