@@ -24,7 +24,7 @@ Ajouter une entrée à la liste `news` de `content.json` :
 }
 ```
 
-La date accepte `AAAA-MM` ou `AAAA-MM-JJ`. Les entrées sont classées de la plus récente à la plus ancienne ; à date égale, l’ordre du fichier est conservé. Utiliser `Contribution` pour une sortie à laquelle tu as participé, `Team release` pour une annonce de ton équipe, ou par exemple `Reading` pour une lecture intéressante. Préciser ta contribution dans la description lorsque c’est pertinent. Les liens pointent vers l’annonce ou la ressource d’origine. La rubrique apparaît sur la page d’accueil, avant les publications.
+La date accepte `AAAA-MM` ou `AAAA-MM-JJ`. Les entrées sont classées de la plus récente à la plus ancienne ; à date égale, l’ordre du fichier est conservé. Utiliser `Contribution` pour une sortie à laquelle tu as participé, `Team release` pour une annonce de ton équipe, ou par exemple `Reading` pour une lecture intéressante. Préciser ta contribution dans la description lorsque c’est pertinent. Les liens pointent vers l’annonce ou la ressource d’origine. La rubrique apparaît à droite des publications sur ordinateur, dans une colonne plus discrète, et après les publications sur les écrans étroits.
 
 ## Publier une note
 
