@@ -54,7 +54,7 @@
       "date": "2026-10",
       "title": "Jais-ASR",
       "category": "Contribution",
-      "description": "I contributed to our open speech recognition model for Arabic and its dialects (approximately 5.7B parameters).",
+      "description": "I contributed to our open speech recognition model for Arabic and its dialects (6B parameters).",
       "url": "https://ifm.ai/blog/jais-asr/"
     },
     {
