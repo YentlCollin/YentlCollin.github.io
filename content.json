@@ -23,6 +23,14 @@
     {
       "title": "Time series & tabular",
       "text": "Interpretable learning for time-series and tabular data, state-space models, and forecasting."
+    },
+    {
+      "title": "Discrete diffusion",
+      "text": "Discrete diffusion models for language and speech."
+    },
+    {
+      "title": "LLMs & speech",
+      "text": "Large language models, speech generation, and speech recognition."
     }
   ],
   "publications": [
