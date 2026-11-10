@@ -16,6 +16,7 @@ if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir()
 shutil.copytree(ROOT / 'assets', OUT / 'assets')
+shutil.copyfile(ROOT / 'assets' / 'favicon.ico', OUT / 'favicon.ico')
 
 
 def links():
@@ -27,7 +28,7 @@ def page(title, body, filename, active='Home', description=None):
     nav = ''.join(f'<a href="{url}"'+(' aria-current="page"' if active == label else '')+f'>{label}</a>' for label, url in [('Home','index.html'),('Publications','publications.html'),('Notes & writing','notes.html'),('Contact','contact.html')])
     scholar_footer = f'<a href="{e(C["scholar"])}">Scholar</a>' if C.get('scholar') else ''
     doc = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — Yentl Collin</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#faf9f5"><link rel="canonical" href="{e(C['site_url'])}/{filename}"><meta property="og:title" content="{e(title)} — Yentl Collin"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><link rel="preload" href="assets/fonts/font-4.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="assets/style.css?v=5"><link rel="icon" href="assets/favicon.ico?v=2" sizes="any"><link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — Yentl Collin</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#faf9f5"><link rel="canonical" href="{e(C['site_url'])}/{filename}"><meta property="og:title" content="{e(title)} — Yentl Collin"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><link rel="preload" href="assets/fonts/font-4.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="assets/style.css?v=5"><link rel="icon" href="favicon.ico?v=3" type="image/x-icon"><link rel="icon" href="assets/favicon-32.png?v=3" type="image/png" sizes="32x32"><link rel="icon" href="assets/favicon-192.png?v=3" type="image/png" sizes="192x192"><link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3" sizes="180x180"></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html">Yentl Collin<span style="color:#7f946e">.</span></a><div class="navlinks">{nav}<a class="cv" href="assets/Yentl-Collin-CV.pdf">CV ↗</a></div></nav></header><main id="main">{body}</main><footer><span>© {date.today().year} Yentl Collin</span><div class="footer-links"><a href="{e(C['github'])}">GitHub</a><a href="{e(C['linkedin'])}">LinkedIn</a><a href="mailto:{e(C['email'])}">Email</a>{scholar_footer}</div></footer></body></html>'''
     (OUT / filename).write_text(doc)
 
