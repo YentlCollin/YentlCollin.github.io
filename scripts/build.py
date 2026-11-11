@@ -89,16 +89,20 @@ if portrait:
 else:
     hero_image = '<figure class="hero-art"><div class="art-frame"><img src="assets/research/flow-map.svg" alt="Conceptual illustration of a teacher trajectory and a learned flow map" width="640" height="400"></div><figcaption>Flow matching & generative modeling</figcaption></figure>'
 research = ''.join(f'<span>{e(i["title"])}</span>' for i in C['interests'])
+note_teaser = ''
 if notes:
     latest = notes[0]
     note_teaser = f'<p class="kicker">{e(latest["date"])}</p><h3><a href="{latest["url"]}">{e(latest["title"])}</a></h3><p>{e(latest.get("summary", ""))}</p>'
-else:
-    note_teaser = '<div class="empty-note"><p>A notebook for ideas worth keeping.</p><p class="subtle">Research notes, readings, and occasional detours.<br>First entries coming soon.</p></div>'
+home_description = (
+    'Yentl Collin — research in generative modeling, efficient foundation models, '
+    'and interpretable time-series learning. A notebook for ideas worth keeping. '
+    'Research notes, readings, and occasional detours.'
+)
 page('Home', f'''<div class="hero"><div class="hero-copy"><p class="kicker">Machine learning research</p><h1>{e(C['name'])}</h1><p class="role">{e(C['role'])}</p><div class="intro">{''.join('<p>'+e(p)+'</p>' for p in C['intro'])}</div>{links()}</div>{hero_image}</div>
 <div class="research-line"><h2>Research interests</h2><div class="topics">{research}</div></div>
 <div class="research-columns"><section class="publications-section" aria-labelledby="papers-title"><div class="section-head"><h2 id="papers-title">Selected publications</h2><a href="publications.html">All publications <span aria-hidden="true">↗</span></a></div>{papers()}</section><aside class="releases-sidebar" aria-labelledby="news-title">{news_section()}</aside></div>
-<div class="lower-grid"><section><h2>Notes & writing</h2>{note_teaser}</section></div>
-<div class="contact-strip"><p>Always happy to talk research.</p><a href="mailto:{e(C['email'])}">{e(C['email'])} &nbsp; ↗</a></div>''', 'index.html')
+<div class="lower-grid"><section><h2><a href="notes.html">Notes &amp; writing</a></h2>{note_teaser}</section></div>
+<div class="contact-strip"><a href="mailto:{e(C['email'])}">{e(C['email'])} &nbsp; ↗</a></div>''', 'index.html', description=home_description)
 scholar_publications = f'<div class="links"><a href="{e(C["scholar"])}">Google Scholar <span aria-hidden="true">↗</span></a></div>' if C.get('scholar') else ''
 page('Publications', f'<div class="page-intro"><p class="kicker">Research</p><h1>Publications</h1>{scholar_publications}</div>{papers()}<p class="authors" style="margin-top:25px">* Equal contribution.</p>', 'publications.html', 'Publications')
 listing = ''.join(f'<a class="note-row" href="{n["url"]}"><time datetime="{e(n["date"])}">{e(n["date"])}</time><div><h2>{e(n["title"])}</h2><p>{e(n.get("summary", ""))}</p></div></a>' for n in notes)
