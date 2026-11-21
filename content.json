@@ -71,7 +71,7 @@
       "category": "Contribution",
       "description": "I contributed to Jais 3, IFM’s family of six Arabic-centric language and agentic models ranging from 0.9B to 375B parameters.",
       "url": "https://ifm.ai/blog/jais3/",
-      "technical_report": "https://arxiv.org/abs/2611.10224"
+      "technical_report": "https://arxiv.org/pdf/2611.10224"
     },
     {
       "date": "2026-09",
@@ -79,7 +79,7 @@
       "category": "Team release",
       "description": "IFM released six open foundation models ranging from 0.9B to 375B parameters, alongside training code, checkpoints, and recipes.",
       "url": "https://ifm.ai/blog/k2/",
-      "technical_report": "https://arxiv.org/abs/2611.21003"
+      "technical_report": "https://arxiv.org/pdf/2611.21003"
     }
   ],
   "scholar": "https://scholar.google.com/citations?user=-pRhVEcAAAAJ&hl=fr"
