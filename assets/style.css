@@ -187,6 +187,8 @@ footer .footer-links { display: flex; gap: 20px; }
 .news-category { font-size: 9px; letter-spacing: .06em; color: var(--muted); }
 .news-category.contribution { color: var(--green); }
 .news-copy p { font-size: 12px; line-height: 1.8; color: var(--muted); margin: 5px 0 0; }
+.news-copy .links { margin-top: 10px; gap: 10px 17px; }
+.news-copy .links a { font-size: 11px; border-bottom: 1px solid #cdd4c5; line-height: 1.8; }
 @media (max-width: 640px) {
   .news-section { margin-top: 32px; }
   .news-item { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }

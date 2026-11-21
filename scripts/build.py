@@ -56,7 +56,10 @@ def news_section():
         label = f'{month_abbr[parsed_date.month]} {parsed_date.year}'
         category = item.get('category', '')
         category_class = ' contribution' if category == 'Contribution' else ''
-        rows.append(f'''<li class="news-item"><time datetime="{e(raw_date)}">{label}</time><div class="news-copy"><div class="news-heading"><h3><a href="{e(item['url'])}">{e(item['title'])} <span aria-hidden="true">↗</span></a></h3><span class="news-category{category_class}">{e(category)}</span></div><p>{e(item['description'])}</p></div></li>''')
+        news_links = f'<a href="{e(item["url"])}">Blog <span aria-hidden="true">↗</span></a>'
+        if item.get('technical_report'):
+            news_links += f'<a href="{e(item["technical_report"])}">Technical report <span aria-hidden="true">↗</span></a>'
+        rows.append(f'''<li class="news-item"><time datetime="{e(raw_date)}">{label}</time><div class="news-copy"><div class="news-heading"><h3><a href="{e(item['url'])}">{e(item['title'])} <span aria-hidden="true">↗</span></a></h3><span class="news-category{category_class}">{e(category)}</span></div><p>{e(item['description'])}</p><div class="links">{news_links}</div></div></li>''')
     return '<section class="news-section" id="news" aria-labelledby="news-title"><div class="section-head"><h2 id="news-title">News &amp; releases</h2></div><ul class="news-list">' + ''.join(rows) + '</ul></section>'
 
 
